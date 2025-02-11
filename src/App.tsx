@@ -28,14 +28,14 @@ function App() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-              Zonos AI: Next-Generation Text-to-Speech Technology
+              Zonos AI: The Future of Voice Synthesis
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              200,000+ hours of multilingual training. One powerful AI voice model.
+              Powered by 200,000+ hours of multilingual training data, Zonos AI delivers next-generation voice synthesis with unmatched speed, accuracy, and naturalness.
             </p>
             <a href="https://playground.zyphra.com/chat" target="_blank" rel="noopener noreferrer">
               <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform flex items-center gap-2 mx-auto">
-                Try Zonos Demo
+                Experience Zonos AI
                 <ChevronRight className="w-5 h-5" />
               </button>
             </a>
@@ -46,15 +46,15 @@ function App() {
       {/* Key Features */}
       <section className="py-20 bg-gray-900/50 backdrop-blur-lg">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">Key Features</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">Zonos AI Core Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: <Wand2 className="w-8 h-8" />, title: 'Zero-shot Voice Cloning', description: 'Clone any voice with just seconds of audio' },
-              { icon: <Globe2 className="w-8 h-8" />, title: 'Multilingual Support', description: 'EN, JP, CN, FR, DE and more' },
-              { icon: <Heart className="w-8 h-8" />, title: 'Emotion Control', description: 'Fine-tune emotional expression' },
-              { icon: <Music className="w-8 h-8" />, title: 'High-quality Output', description: '44kHz crystal clear audio' },
-              { icon: <Zap className="w-8 h-8" />, title: 'Real-time Processing', description: 'Instant voice generation' },
-              { icon: <Network className="w-8 h-8" />, title: 'Advanced Architecture', description: 'State-of-the-art neural networks' }
+              { icon: <Wand2 className="w-8 h-8" />, title: 'Zero-Shot Voice Cloning', description: 'Clone any voice perfectly with just seconds of audio' },
+              { icon: <Globe2 className="w-8 h-8" />, title: 'Multilingual Support', description: 'Support for English, Chinese, Japanese, French, German, and more' },
+              { icon: <Heart className="w-8 h-8" />, title: 'Emotion Control System', description: 'AI-driven precise emotional expression control' },
+              { icon: <Music className="w-8 h-8" />, title: 'High-Quality Output', description: 'Professional 44kHz audio quality output' },
+              { icon: <Zap className="w-8 h-8" />, title: 'Real-Time Processing', description: 'Instant voice generation with millisecond response' },
+              { icon: <Network className="w-8 h-8" />, title: 'Advanced Architecture', description: 'Built on cutting-edge neural network technology' }
             ].map((feature, index) => (
               <div key={index} className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-colors">
                 <div className="text-cyan-400 mb-4">{feature.icon}</div>
@@ -69,15 +69,15 @@ function App() {
       {/* Use Cases */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">Use Cases</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">Zonos AI Use Cases</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: <Youtube className="w-8 h-8" />, title: 'Content Creators' },
-              { icon: <Gamepad2 className="w-8 h-8" />, title: 'Game Developers' },
-              { icon: <Accessibility className="w-8 h-8" />, title: 'Accessibility Solutions' },
-              { icon: <GraduationCap className="w-8 h-8" />, title: 'Educational Platforms' },
-              { icon: <Building2 className="w-8 h-8" />, title: 'Enterprise Applications' },
-              { icon: <Code2 className="w-8 h-8" />, title: 'API Integration' }
+              { icon: <Youtube className="w-8 h-8" />, title: 'Content Creators', description: 'Video voiceovers, podcasts, audio content' },
+              { icon: <Gamepad2 className="w-8 h-8" />, title: 'Game Developers', description: 'Character voicing, real-time voice interaction' },
+              { icon: <Accessibility className="w-8 h-8" />, title: 'Accessibility Solutions', description: 'Smart text reading, voice assistance' },
+              { icon: <GraduationCap className="w-8 h-8" />, title: 'Education Platforms', description: 'Language learning, online courses' },
+              { icon: <Building2 className="w-8 h-8" />, title: 'Enterprise Solutions', description: 'AI customer service, voice assistants' },
+              { icon: <Code2 className="w-8 h-8" />, title: 'API Integration', description: 'Flexible voice service integration' }
             ].map((useCase, index) => (
               <div key={index} className="p-6 rounded-xl bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-lg">
                 <div className="text-purple-400 mb-4">{useCase.icon}</div>
@@ -91,14 +91,14 @@ function App() {
       {/* Technical Specs */}
       <section className="py-20 bg-gray-900/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16">Technical Specifications</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">Zonos AI Technical Specifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold mb-4">Model Architecture</h3>
               <ul className="space-y-2 text-gray-300">
-                <li>• Transformer-based encoder-decoder</li>
-                <li>• 1.2B parameters</li>
-                <li>• Multi-head attention layers</li>
+                <li>• Transformer-based encoder-decoder architecture</li>
+                <li>• 1.2 billion parameters</li>
+                <li>• Multi-head attention mechanism</li>
                 <li>• Advanced vocoder network</li>
               </ul>
             </div>
@@ -141,7 +141,7 @@ function App() {
       {/* Footer */}
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center text-gray-400">
-          © 2025 Zonos AI. All rights reserved.
+          © 2025 Zonos AI. All rights reserved. Dedicated to providing cutting-edge AI voice solutions.
         </div>
       </footer>
     </div>
