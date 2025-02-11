@@ -138,6 +138,68 @@ function App() {
         </div>
       </section>
 
+      {/* Blog Section */}
+      <section className="py-20 bg-gray-900/50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16">Latest from Our Blog</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Blog Post 1 */}
+            <a href="/blog/introducing-zonos-ai-v0-1.html" className="group">
+              <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">
+                <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600">
+                  <div className="w-full h-full flex items-center justify-center text-white/80">
+                    <Network className="w-16 h-16" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">Introducing Zonos AI v0.1</h3>
+                <p className="text-gray-400 mb-4">Announcing our groundbreaking release of Zonos AI v0.1 beta, featuring revolutionary text-to-speech models.</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>5 min read</span>
+                  <span className="mx-2">•</span>
+                  <span>Technology</span>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 2 */}
+            <a href="/blog/zonos-ai-technical-deep-dive.html" className="group">
+              <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">
+                <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-gradient-to-r from-cyan-600 to-blue-600">
+                  <div className="w-full h-full flex items-center justify-center text-white/80">
+                    <Code2 className="w-16 h-16" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">Technical Deep Dive: Inside Zonos AI</h3>
+                <p className="text-gray-400 mb-4">Explore the innovative architecture and technical details behind Zonos AI's powerful text-to-speech system.</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>7 min read</span>
+                  <span className="mx-2">•</span>
+                  <span>Technical</span>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 3 */}
+            <a href="/blog/getting-started-with-zonos-ai.html" className="group">
+              <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">
+                <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600">
+                  <div className="w-full h-full flex items-center justify-center text-white/80">
+                    <Wand2 className="w-16 h-16" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">Getting Started with Zonos AI</h3>
+                <p className="text-gray-400 mb-4">A comprehensive guide to help you start using Zonos AI in your projects, with practical examples and best practices.</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>6 min read</span>
+                  <span className="mx-2">•</span>
+                  <span>Tutorial</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center text-gray-400">
