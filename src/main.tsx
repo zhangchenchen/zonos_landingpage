@@ -7,6 +7,8 @@ import BlogLayout from './components/BlogLayout';
 import IntroPost from './blog/introducing-zonos-ai-v0-1.mdx';
 import TechnicalPost from './blog/zonos-ai-technical-deep-dive.mdx';
 import GettingStartedPost from './blog/getting-started-with-zonos-ai.mdx';
+import FuturePost from './blog/future-of-ai-voice-synthesis.mdx';
+import VoiceCloningPost from './blog/voice-cloning-revolution.mdx';
 import './index.css';
 
 const components = {
@@ -42,6 +44,16 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/blog/getting-started-with-zonos-ai.html" element={
             <BlogLayout meta={GettingStartedPost.frontmatter}>
               <GettingStartedPost />
+            </BlogLayout>
+          } />
+          <Route path="/blog/future-of-ai-voice-synthesis.html" element={
+            <BlogLayout meta={FuturePost.frontmatter}>
+              <FuturePost />
+            </BlogLayout>
+          } />
+          <Route path="/blog/voice-cloning-revolution.html" element={
+            <BlogLayout meta={VoiceCloningPost.frontmatter}>
+              <VoiceCloningPost />
             </BlogLayout>
           } />
         </Routes>

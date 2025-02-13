@@ -196,6 +196,42 @@ function App() {
                 </div>
               </div>
             </a>
+
+            {/* Blog Post 4 */}
+            <a href="/blog/future-of-ai-voice-synthesis.html" className="group">
+              <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">
+                <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-gradient-to-r from-green-600 to-teal-600">
+                  <div className="w-full h-full flex items-center justify-center text-white/80">
+                    <Music className="w-16 h-16" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">Future of AI Voice Synthesis</h3>
+                <p className="text-gray-400 mb-4">Exploring the future possibilities and innovations in AI-powered voice synthesis technology.</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>5 min read</span>
+                  <span className="mx-2">•</span>
+                  <span>Technology</span>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 5 */}
+            <a href="/blog/voice-cloning-revolution.html" className="group">
+              <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">
+                <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-gradient-to-r from-yellow-600 to-orange-600">
+                  <div className="w-full h-full flex items-center justify-center text-white/80">
+                    <Heart className="w-16 h-16" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">Voice Cloning Revolution</h3>
+                <p className="text-gray-400 mb-4">Making personalized voice experiences accessible to everyone through advanced voice cloning technology.</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>4 min read</span>
+                  <span className="mx-2">•</span>
+                  <span>Innovation</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
