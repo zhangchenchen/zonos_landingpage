@@ -4,11 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/react';
 import App from './App';
 import BlogLayout from './components/BlogLayout';
+import LegalLayout from './components/LegalLayout';
 import IntroPost from './blog/introducing-zonos-ai-v0-1.mdx';
 import TechnicalPost from './blog/zonos-ai-technical-deep-dive.mdx';
 import GettingStartedPost from './blog/getting-started-with-zonos-ai.mdx';
 import FuturePost from './blog/future-of-ai-voice-synthesis.mdx';
 import VoiceCloningPost from './blog/voice-cloning-revolution.mdx';
+import TermsOfService from './legal/terms-of-service.mdx';
+import PrivacyPolicy from './legal/privacy-policy.mdx';
 import './index.css';
 
 const components = {
@@ -55,6 +58,16 @@ createRoot(document.getElementById('root')!).render(
             <BlogLayout meta={VoiceCloningPost.frontmatter}>
               <VoiceCloningPost />
             </BlogLayout>
+          } />
+          <Route path="/terms-of-service" element={
+            <LegalLayout meta={TermsOfService.frontmatter}>
+              <TermsOfService />
+            </LegalLayout>
+          } />
+          <Route path="/privacy-policy" element={
+            <LegalLayout meta={PrivacyPolicy.frontmatter}>
+              <PrivacyPolicy />
+            </LegalLayout>
           } />
         </Routes>
       </Router>

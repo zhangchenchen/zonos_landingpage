@@ -238,8 +238,18 @@ function App() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-white/10">
-        <div className="container mx-auto px-6 text-center text-gray-400">
-          © 2025 Zonos AI. All rights reserved. Dedicated to providing cutting-edge AI voice solutions.
+        <div className="container mx-auto px-6">
+          <div className="text-center text-gray-400 mb-4">
+            © 2025 Zonos AI. All rights reserved. Dedicated to providing cutting-edge AI voice solutions.
+          </div>
+          <div className="flex justify-center space-x-6 text-sm">
+            <a href="/terms-of-service" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              Terms of Service
+            </a>
+            <a href="/privacy-policy" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </footer>
     </div>

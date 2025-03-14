@@ -4,10 +4,11 @@ declare module '*.mdx' {
   interface MDXContent extends ComponentType<ComponentProps<'div'>> {
     frontmatter: {
       title: string;
-      date: string;
-      author: string;
-      category: string;
-      readTime: string;
+      date?: string;
+      author?: string;
+      category?: string;
+      readTime?: string;
+      lastUpdated?: string;
     };
   }
 
