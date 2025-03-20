@@ -14,10 +14,51 @@ import {
   Play,
   BarChart2,
   Network,
-  Code2
+  Code2,
+  Images,
+  Video,
+  Sparkles,
+  X
 } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
 
 function App() {
+  // State for controlling banner animation
+  const [bannerVisible, setBannerVisible] = useState(false);
+  const [bannerAnimating, setBannerAnimating] = useState(false);
+  const [bannerPosition, setBannerPosition] = useState('-100%');
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  // Effect to control banner animation timing
+  useEffect(() => {
+    // Show banner after 2 seconds
+    const showTimer = setTimeout(() => {
+      setBannerVisible(true);
+      setTimeout(() => {
+        setBannerPosition('0%');
+        setBannerAnimating(true);
+      }, 50);
+    }, 2000);
+    
+    // Stop animation after it completes (to reduce CPU usage)
+    const animationTimer = setTimeout(() => {
+      setBannerAnimating(false);
+    }, 5000);
+    
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(animationTimer);
+    };
+  }, []);
+
+  // Function to close the banner
+  const closeBanner = () => {
+    setBannerPosition('-100%');
+    setTimeout(() => {
+      setBannerVisible(false);
+    }, 500); // Wait for the animation to complete
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 text-white">
       {/* Hero Section */}
@@ -42,6 +83,73 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Affiliate Banner */}
+      {bannerVisible && (
+        <div 
+          ref={bannerRef}
+          className="sticky top-0 z-50 transition-all duration-500 ease-in-out"
+          style={{ transform: `translateX(${bannerPosition})` }}
+        >
+          <div className={`relative overflow-hidden ${bannerAnimating ? 'animate-[pulse_2s_infinite]' : ''}`}>
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-indigo-600/20 backdrop-blur-sm"></div>
+            <div className="container mx-auto px-6 py-4">
+              <a 
+                href="https://fas.st/t/QgQgrXqp" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block cursor-pointer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-black/30 to-black/10 backdrop-blur-md rounded-xl p-4 border border-white/10 overflow-hidden shadow-2xl group hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+                  {/* Close button - positioned outside the clickable area */}
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      closeBanner();
+                    }} 
+                    className="absolute top-2 right-2 p-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-20"
+                    aria-label="Close banner"
+                  >
+                    <X className="w-4 h-4 text-white/80" />
+                  </button>
+                  
+                  {/* Decorative elements for visual appeal */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-indigo-500/20 to-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                  
+                  {/* Banner content */}
+                  <div className="flex items-center mb-4 md:mb-0 space-x-4">
+                    <div className="flex-shrink-0 bg-gradient-to-br from-pink-500 to-purple-600 p-3 rounded-lg">
+                      <div className="flex space-x-2">
+                        <Images className="w-6 h-6 text-white animate-[pulse_3s_infinite]" />
+                        <Video className="w-6 h-6 text-white animate-[pulse_3s_infinite_0.5s]" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="inline-block px-2 py-1 bg-gradient-to-r from-pink-500 to-purple-500 text-xs font-bold text-white rounded mb-1">PARTNER</span>
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                        Ultimate AI Image & Video Generator
+                      </h3>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        Create stunning visuals with the all-in-one AI tool for images and videos
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="group-hover:scale-105 transform transition-all duration-300">
+                    <button className="bg-gradient-to-r from-pink-500 to-purple-600 mt-4 md:mt-0 px-6 py-3 rounded-lg text-white font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                      Try it Free
+                      <Sparkles className="w-5 h-5 group-hover:animate-spin" />
+                    </button>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Key Features */}
       <section className="py-20 bg-gray-900/50 backdrop-blur-lg">
