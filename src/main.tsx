@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/react';
 import App from './App';
 import BlogLayout from './components/BlogLayout';
@@ -28,49 +28,77 @@ const components = {
   ),
 };
 
+// 创建路由配置
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/blog/introducing-zonos-ai-v0-1.html",
+    element: (
+      <BlogLayout meta={IntroPost.frontmatter}>
+        <IntroPost />
+      </BlogLayout>
+    )
+  },
+  {
+    path: "/blog/zonos-ai-technical-deep-dive.html",
+    element: (
+      <BlogLayout meta={TechnicalPost.frontmatter}>
+        <TechnicalPost />
+      </BlogLayout>
+    )
+  },
+  {
+    path: "/blog/getting-started-with-zonos-ai.html",
+    element: (
+      <BlogLayout meta={GettingStartedPost.frontmatter}>
+        <GettingStartedPost />
+      </BlogLayout>
+    )
+  },
+  {
+    path: "/blog/future-of-ai-voice-synthesis.html",
+    element: (
+      <BlogLayout meta={FuturePost.frontmatter}>
+        <FuturePost />
+      </BlogLayout>
+    )
+  },
+  {
+    path: "/blog/voice-cloning-revolution.html",
+    element: (
+      <BlogLayout meta={VoiceCloningPost.frontmatter}>
+        <VoiceCloningPost />
+      </BlogLayout>
+    )
+  },
+  {
+    path: "/terms-of-service",
+    element: (
+      <LegalLayout meta={TermsOfService.frontmatter}>
+        <TermsOfService />
+      </LegalLayout>
+    )
+  },
+  {
+    path: "/privacy-policy",
+    element: (
+      <LegalLayout meta={PrivacyPolicy.frontmatter}>
+        <PrivacyPolicy />
+      </LegalLayout>
+    )
+  }
+], {
+  // 此选项会使React Router不尝试处理无效路径，让服务器处理
+  basename: '/'
+});
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <MDXProvider components={components}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/blog/introducing-zonos-ai-v0-1.html" element={
-            <BlogLayout meta={IntroPost.frontmatter}>
-              <IntroPost />
-            </BlogLayout>
-          } />
-          <Route path="/blog/zonos-ai-technical-deep-dive.html" element={
-            <BlogLayout meta={TechnicalPost.frontmatter}>
-              <TechnicalPost />
-            </BlogLayout>
-          } />
-          <Route path="/blog/getting-started-with-zonos-ai.html" element={
-            <BlogLayout meta={GettingStartedPost.frontmatter}>
-              <GettingStartedPost />
-            </BlogLayout>
-          } />
-          <Route path="/blog/future-of-ai-voice-synthesis.html" element={
-            <BlogLayout meta={FuturePost.frontmatter}>
-              <FuturePost />
-            </BlogLayout>
-          } />
-          <Route path="/blog/voice-cloning-revolution.html" element={
-            <BlogLayout meta={VoiceCloningPost.frontmatter}>
-              <VoiceCloningPost />
-            </BlogLayout>
-          } />
-          <Route path="/terms-of-service" element={
-            <LegalLayout meta={TermsOfService.frontmatter}>
-              <TermsOfService />
-            </LegalLayout>
-          } />
-          <Route path="/privacy-policy" element={
-            <LegalLayout meta={PrivacyPolicy.frontmatter}>
-              <PrivacyPolicy />
-            </LegalLayout>
-          } />
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </MDXProvider>
   </StrictMode>
 );
