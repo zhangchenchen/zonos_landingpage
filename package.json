@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify-sitemap": "node public/verify-sitemap.js",
+    "postbuild": "npm run verify-sitemap"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
