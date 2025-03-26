@@ -28,6 +28,8 @@ function App() {
   const [bannerAnimating, setBannerAnimating] = useState(false);
   const [bannerPosition, setBannerPosition] = useState('-100%');
   const bannerRef = useRef<HTMLDivElement>(null);
+  // Add ref for features section
+  const featuresRef = useRef<HTMLElement>(null);
 
   // Effect to control banner animation timing
   useEffect(() => {
@@ -59,6 +61,12 @@ function App() {
     }, 500); // Wait for the animation to complete
   };
 
+  // Function to scroll to features section
+  const scrollToFeatures = (e: React.MouseEvent) => {
+    e.preventDefault();
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 text-white">
       {/* Hero Section */}
@@ -74,12 +82,15 @@ function App() {
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
               Powered by 200,000+ hours of multilingual training data, Zonos AI delivers next-generation voice synthesis with unmatched speed, accuracy, and naturalness.
             </p>
-            <a href="https://playground.zyphra.com/chat" target="_blank" rel="noopener noreferrer">
-              <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform flex items-center gap-2 mx-auto">
-                Experience Zonos AI
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={scrollToFeatures}
+                className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform flex items-center gap-2 mx-auto"
+              >
+                Explore Zonos AI
                 <ChevronRight className="w-5 h-5" />
               </button>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -152,23 +163,25 @@ function App() {
       )}
 
       {/* Key Features */}
-      <section className="py-20 bg-gray-900/50 backdrop-blur-lg">
+      <section ref={featuresRef} className="py-20 bg-gray-900/50 backdrop-blur-lg">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16">Zonos AI Core Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: <Wand2 className="w-8 h-8" />, title: 'Zero-Shot Voice Cloning', description: 'Clone any voice perfectly with just seconds of audio' },
-              { icon: <Globe2 className="w-8 h-8" />, title: 'Multilingual Support', description: 'Support for English, Chinese, Japanese, French, German, and more' },
-              { icon: <Heart className="w-8 h-8" />, title: 'Emotion Control System', description: 'AI-driven precise emotional expression control' },
-              { icon: <Music className="w-8 h-8" />, title: 'High-Quality Output', description: 'Professional 44kHz audio quality output' },
-              { icon: <Zap className="w-8 h-8" />, title: 'Real-Time Processing', description: 'Instant voice generation with millisecond response' },
-              { icon: <Network className="w-8 h-8" />, title: 'Advanced Architecture', description: 'Built on cutting-edge neural network technology' }
+              { icon: <Wand2 className="w-8 h-8" />, title: 'Zero-Shot Voice Cloning', description: 'Clone any voice perfectly with just seconds of audio', href: '/feature/voice-cloning' },
+              { icon: <Globe2 className="w-8 h-8" />, title: 'Multilingual Support', description: 'Support for English, Chinese, Japanese, French, German, and more', href: '/feature/multilingual-support' },
+              { icon: <Heart className="w-8 h-8" />, title: 'Emotion Control System', description: 'AI-driven precise emotional expression control', href: '/feature/emotion-control' },
+              { icon: <Music className="w-8 h-8" />, title: 'High-Quality Output', description: 'Professional 44kHz audio quality output', href: '/feature/high-quality-output' },
+              { icon: <Zap className="w-8 h-8" />, title: 'Real-Time Processing', description: 'Instant voice generation with millisecond response', href: '/feature/real-time-processing' },
+              { icon: <Network className="w-8 h-8" />, title: 'Advanced Architecture', description: 'Built on cutting-edge neural network technology', href: '/feature/advanced-architecture' }
             ].map((feature, index) => (
-              <div key={index} className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-colors">
-                <div className="text-cyan-400 mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
-              </div>
+              <a key={index} href={feature.href} className="block transition-transform hover:scale-105">
+                <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-colors h-full">
+                  <div className="text-cyan-400 mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </div>
+              </a>
             ))}
           </div>
         </div>
@@ -180,17 +193,19 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16">Zonos AI Use Cases</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: <Youtube className="w-8 h-8" />, title: 'Content Creators', description: 'Video voiceovers, podcasts, audio content' },
-              { icon: <Gamepad2 className="w-8 h-8" />, title: 'Game Developers', description: 'Character voicing, real-time voice interaction' },
-              { icon: <Accessibility className="w-8 h-8" />, title: 'Accessibility Solutions', description: 'Smart text reading, voice assistance' },
-              { icon: <GraduationCap className="w-8 h-8" />, title: 'Education Platforms', description: 'Language learning, online courses' },
-              { icon: <Building2 className="w-8 h-8" />, title: 'Enterprise Solutions', description: 'AI customer service, voice assistants' },
-              { icon: <Code2 className="w-8 h-8" />, title: 'API Integration', description: 'Flexible voice service integration' }
+              { icon: <Youtube className="w-8 h-8" />, title: 'Content Creators', description: 'Video voiceovers, podcasts, audio content', href: '/usecase/content-creators' },
+              { icon: <Gamepad2 className="w-8 h-8" />, title: 'Game Developers', description: 'Character voicing, real-time voice interaction', href: '/usecase/game-developers' },
+              { icon: <Accessibility className="w-8 h-8" />, title: 'Accessibility Solutions', description: 'Smart text reading, voice assistance', href: '/usecase/accessibility-solutions' },
+              { icon: <GraduationCap className="w-8 h-8" />, title: 'Education Platforms', description: 'Language learning, online courses', href: '/usecase/education-platforms' },
+              { icon: <Building2 className="w-8 h-8" />, title: 'Enterprise Solutions', description: 'AI customer service, voice assistants', href: '/usecase/enterprise-solutions' },
+              { icon: <Code2 className="w-8 h-8" />, title: 'API Integration', description: 'Flexible voice service integration', href: '/usecase/api-integration' }
             ].map((useCase, index) => (
-              <div key={index} className="p-6 rounded-xl bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-lg">
-                <div className="text-purple-400 mb-4">{useCase.icon}</div>
-                <h3 className="text-xl font-semibold">{useCase.title}</h3>
-              </div>
+              <a key={index} href={useCase.href} className="block transition-transform hover:scale-105">
+                <div className="p-6 rounded-xl bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-lg h-full">
+                  <div className="text-purple-400 mb-4">{useCase.icon}</div>
+                  <h3 className="text-xl font-semibold">{useCase.title}</h3>
+                </div>
+              </a>
             ))}
           </div>
         </div>
@@ -243,6 +258,21 @@ function App() {
               <span className="text-gray-400">generations</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Experience Zonos AI Button */}
+      <section className="py-10">
+        <div className="container mx-auto px-6 text-center">
+          <a 
+            href="https://playground.zyphra.com/chat" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-purple-500 to-pink-500 px-10 py-5 rounded-lg text-xl font-semibold hover:scale-105 transition-transform inline-flex items-center gap-3"
+          >
+            Experience Zonos AI
+            <ChevronRight className="w-6 h-6" />
+          </a>
         </div>
       </section>
 

@@ -12,6 +12,18 @@ import FuturePost from './blog/future-of-ai-voice-synthesis.mdx';
 import VoiceCloningPost from './blog/voice-cloning-revolution.mdx';
 import TermsOfService from './legal/terms-of-service.mdx';
 import PrivacyPolicy from './legal/privacy-policy.mdx';
+import ContentCreatorsUseCase from './usecase/content-creators';
+import GameDevelopersUseCase from './usecase/game-developers';
+import AccessibilitySolutionsUseCase from './usecase/accessibility-solutions';
+import EducationPlatformsUseCase from './usecase/education-platforms';
+import EnterpriseSolutionsUseCase from './usecase/enterprise-solutions';
+import APIIntegrationUseCase from './usecase/api-integration';
+import VoiceCloningFeature from './feature/voice-cloning';
+import MultilingualSupportFeature from './feature/multilingual-support';
+import EmotionControlFeature from './feature/emotion-control';
+import HighQualityOutputFeature from './feature/high-quality-output';
+import RealTimeProcessingFeature from './feature/real-time-processing';
+import AdvancedArchitectureFeature from './feature/advanced-architecture';
 import './index.css';
 
 const components = {
@@ -89,6 +101,54 @@ const router = createBrowserRouter([
         <PrivacyPolicy />
       </LegalLayout>
     )
+  },
+  {
+    path: "/usecase/content-creators",
+    element: <ContentCreatorsUseCase />
+  },
+  {
+    path: "/usecase/game-developers",
+    element: <GameDevelopersUseCase />
+  },
+  {
+    path: "/usecase/accessibility-solutions",
+    element: <AccessibilitySolutionsUseCase />
+  },
+  {
+    path: "/usecase/education-platforms",
+    element: <EducationPlatformsUseCase />
+  },
+  {
+    path: "/usecase/enterprise-solutions",
+    element: <EnterpriseSolutionsUseCase />
+  },
+  {
+    path: "/usecase/api-integration",
+    element: <APIIntegrationUseCase />
+  },
+  {
+    path: "/feature/voice-cloning",
+    element: <VoiceCloningFeature />
+  },
+  {
+    path: "/feature/multilingual-support",
+    element: <MultilingualSupportFeature />
+  },
+  {
+    path: "/feature/emotion-control",
+    element: <EmotionControlFeature />
+  },
+  {
+    path: "/feature/high-quality-output",
+    element: <HighQualityOutputFeature />
+  },
+  {
+    path: "/feature/real-time-processing",
+    element: <RealTimeProcessingFeature />
+  },
+  {
+    path: "/feature/advanced-architecture",
+    element: <AdvancedArchitectureFeature />
   }
 ], {
   // 此选项会使React Router不尝试处理无效路径，让服务器处理
