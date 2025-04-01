@@ -14,4 +14,12 @@ declare module '*.mdx' {
 
   const content: MDXContent;
   export default content;
+}
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    'gradio-app': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
+      src: string;
+    }, HTMLElement>;
+  }
 } 
