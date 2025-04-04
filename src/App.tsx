@@ -297,6 +297,24 @@ function App() {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16">Latest from Our Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* New Blog Post - Voice AI Models Comparison */}
+            <a href="/blog/voice-ai-models-comparison.html" className="group">
+              <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">
+                <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-gradient-to-r from-indigo-600 to-violet-600">
+                  <div className="w-full h-full flex items-center justify-center text-white/80">
+                    <Wand2 className="w-16 h-16" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">The Zonos AI Voice Revolution</h3>
+                <p className="text-gray-400 mb-4">Comprehensive comparison of Zonos AI voice with other leading voice AI models in the market today.</p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>8 min read</span>
+                  <span className="mx-2">•</span>
+                  <span>Technology</span>
+                </div>
+              </div>
+            </a>
+
             {/* Blog Post 1 */}
             <a href="/blog/introducing-zonos-ai-v0-1.html" className="group">
               <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg hover:bg-white/10 transition-all duration-300">

@@ -10,6 +10,7 @@ import TechnicalPost from './blog/zonos-ai-technical-deep-dive.mdx';
 import GettingStartedPost from './blog/getting-started-with-zonos-ai.mdx';
 import FuturePost from './blog/future-of-ai-voice-synthesis.mdx';
 import VoiceCloningPost from './blog/voice-cloning-revolution.mdx';
+import VoiceAIComparisonPost from './blog/voice-ai-models-comparison.mdx';
 import TermsOfService from './legal/terms-of-service.mdx';
 import PrivacyPolicy from './legal/privacy-policy.mdx';
 import ContentCreatorsUseCase from './usecase/content-creators';
@@ -45,6 +46,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />
+  },
+  {
+    path: "/blog/voice-ai-models-comparison.html",
+    element: (
+      <BlogLayout meta={VoiceAIComparisonPost.frontmatter}>
+        <VoiceAIComparisonPost />
+      </BlogLayout>
+    )
   },
   {
     path: "/blog/introducing-zonos-ai-v0-1.html",
